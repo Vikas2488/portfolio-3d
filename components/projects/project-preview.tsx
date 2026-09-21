@@ -16,10 +16,18 @@ import { TILT_RANGE, TILT_SPRING } from "@/constants/projects-constants";
 
 import { formatCounter, padIndex } from "@/helpers/format-helpers";
 
+import { ProjectVideo } from "@/components/projects/project-video";
 import { type ProjectPreviewProps } from "@/types/project-types";
 
 const BADGE =
   "rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] uppercase tracking-[0.3em] backdrop-blur-md";
+
+const PROJECT_VIDEOS: Record<string, string> = {
+  "YaPay Client Website Deployment": "/videos/yapay.mp4",
+  "YAGC Client Website Deployment": "/videos/yagc.mp4",
+  "NXG Markets Website Deployment": "/videos/nxgmarket.mp4",
+  "YaOptions Website Deployment": "/videos/yaoptions.mp4",
+};
 
 export const ProjectPreview: FC<ProjectPreviewProps> = ({
   project,
@@ -29,6 +37,7 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
 }) => {
   const pointerX = useMotionValue(0.5);
   const pointerY = useMotionValue(0.5);
+  const videoSrc = PROJECT_VIDEOS[project.title];
 
   const rotateX = useSpring(
     useTransform(pointerY, [0, 1], TILT_RANGE.x),
@@ -79,6 +88,8 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
               sizes="(min-width: 1024px) 58vw, 100vw"
               className="pointer-events-none select-none object-cover object-top"
             />
+          ) : videoSrc ? (
+            <ProjectVideo src={videoSrc} title={project.title} />
           ) : (
             showPreview &&
             project.href && (
@@ -112,14 +123,19 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
             <span
               className={`${BADGE} inline-flex items-center gap-2 border-white/25 bg-black/50 text-white`}
             >
-              {!project.image && project.href && (
+              {videoSrc ? (
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inset-0 animate-ping rounded-full bg-mint opacity-75" />
                   <span className="relative h-1.5 w-1.5 rounded-full bg-mint" />
                 </span>
-              )}
+              ) : !project.image && project.href ? (
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-mint opacity-75" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-mint" />
+                </span>
+              ) : null}
 
-              {project.image ? "Preview" : "Live Preview"}
+              {videoSrc ? "Auto Video" : project.image ? "Preview" : "Live Preview"}
             </span>
 
             <span className={`${BADGE} text-white/70`}>
