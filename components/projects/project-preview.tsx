@@ -16,7 +16,6 @@ import { TILT_RANGE, TILT_SPRING } from "@/constants/projects-constants";
 
 import { formatCounter, padIndex } from "@/helpers/format-helpers";
 
-import { type ProjectVideoProps } from "@/components/projects/project-video";
 import { ProjectVideo } from "@/components/projects/project-video";
 import { type ProjectPreviewProps } from "@/types/project-types";
 
