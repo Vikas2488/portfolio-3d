@@ -1,8 +1,9 @@
 import { HERO_LOCATION, HERO_NAME, HERO_ROLE } from "./hero-constants";
+
 import { CONTACT_EMAIL, MY_SOCIALS } from "./social-constants";
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hasnainirfan.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://your-domain.com"
 ).replace(/\/$/, "");
 
 export const absoluteUrl = (path: string) =>
@@ -13,13 +14,15 @@ export const SITE_NAME = `${HERO_NAME} | ${HERO_ROLE}`;
 export const SITE_TITLE = `${HERO_NAME} | ${HERO_ROLE}`;
 
 export const SITE_DESCRIPTION =
-  "Senior Software Engineer with 5+ years building scalable web and mobile products in React, Next.js and Node.js. Open to freelance and contract work.";
+  "DevOps Engineer with 3 years of experience in AWS, Kubernetes, Docker, Terraform, CI/CD, cloud infrastructure, automation, monitoring, and production environments.";
 
 export const SITE_TAGLINE =
-  "Scalable web & mobile products built with React, Next.js and Node.js.";
+  "Building scalable cloud infrastructure with AWS, Kubernetes, Docker, Terraform and CI/CD.";
 
 export const OG_IMAGE = "/og.jpg";
+
 export const OG_IMAGE_ALT = `${HERO_NAME}, ${HERO_ROLE} portfolio`;
+
 export const OG_LOCALE = "en_US";
 
 export const OG_IMAGES = [
@@ -36,26 +39,38 @@ export const GOOGLE_SITE_VERIFICATION =
 
 export const SITE_KEYWORDS = [
   HERO_NAME,
-  "Software Engineer",
-  "Senior Software Engineer",
-  "Full Stack Developer",
-  "Next.js Developer",
-  "React Developer",
-  "React Native Developer",
-  "Node.js Developer",
-  "Frontend Developer",
-  "Web Developer Portfolio",
-  "Freelance Developer",
-  "Hire Software Engineer",
+  "DevOps Engineer",
+  "DevOps Engineer India",
+  "AWS DevOps Engineer",
+  "Kubernetes Engineer",
+  "AWS",
+  "Kubernetes",
+  "Docker",
+  "Terraform",
+  "Helm",
+  "Jenkins",
+  "GitHub Actions",
+  "Argo CD",
+  "Ansible",
+  "Linux",
+  "NGINX",
+  "Prometheus",
+  "Grafana",
+  "Loki",
+  "CI/CD",
+  "Cloud Infrastructure",
+  "Infrastructure as Code",
+  "GitOps",
+  "DevOps Portfolio",
+  "Cloud Engineer",
   HERO_LOCATION,
-  "Pakistan",
-  "Remote Developer",
+  "Remote DevOps Engineer",
 ];
 
-export const HOME_TITLE = `${HERO_NAME} | ${HERO_ROLE} & Next.js Developer`;
+export const HOME_TITLE = `${HERO_NAME} | ${HERO_ROLE}`;
 
 export const HOME_DESCRIPTION =
-  "Senior Software Engineer in Karachi building scalable web, mobile and API products with React, Next.js and Node.js. Open to freelance and contract work.";
+  "DevOps Engineer with 3 years of experience working with AWS, Kubernetes, Docker, Terraform, CI/CD, cloud infrastructure, automation, monitoring, and production environments.";
 
 export const ADMIN_TITLE = "Contact submissions";
 
@@ -71,34 +86,39 @@ export const SITE_SECTIONS = [
   {
     name: "Home",
     hash: "#home",
-    description: `${HERO_NAME}, ${HERO_ROLE} building scalable web and mobile products.`,
+    description: `${HERO_NAME}, ${HERO_ROLE} specializing in cloud infrastructure, automation, and CI/CD.`,
   },
+
   {
     name: "About",
     hash: "#about",
-    description: `Background, stack and working style of ${HERO_NAME}, a ${HERO_ROLE} based in ${HERO_LOCATION}.`,
+    description: `Background, DevOps experience, cloud technologies, and working approach of ${HERO_NAME}.`,
   },
+
   {
-    name: "Services",
-    hash: "#services",
+    name: "Skills",
+    hash: "#skills",
     description:
-      "Web applications, cross-platform mobile apps, APIs and technical consulting for startups and product teams.",
+      "AWS, Kubernetes, Docker, Terraform, Helm, Jenkins, GitHub Actions, Argo CD, Ansible, and observability tools.",
   },
+
   {
     name: "Work",
     hash: "#work",
     description:
-      "Selected projects and case studies built with React, Next.js, React Native and Node.js.",
+      "DevOps projects involving AWS, Kubernetes, Docker, CI/CD, Infrastructure as Code, GitOps, monitoring, and logging.",
   },
+
   {
-    name: "Testimonials",
-    hash: "#testimonials",
-    description: `What clients and teammates say about working with ${HERO_NAME}.`,
+    name: "Experience",
+    hash: "#experience",
+    description: `${HERO_NAME}'s DevOps engineering experience and production infrastructure work.`,
   },
+
   {
     name: "Contact",
     hash: "#contact",
-    description: `Get in touch with ${HERO_NAME} about freelance, contract or full-time work.`,
+    description: `Get in touch with ${HERO_NAME} about DevOps, cloud infrastructure, automation, and engineering opportunities.`,
   },
 ] as const;
 

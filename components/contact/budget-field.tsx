@@ -1,19 +1,25 @@
 "use client";
 
 import { type FC } from "react";
+
 import { motion } from "motion/react";
+
 import { SPRING_SNAPPY } from "@/animations/ui-animations";
+
 import { BUDGET_OPTIONS } from "@/constants/contact-constants";
+
 import { type BudgetFieldProps } from "@/types/contact-types";
 
 export const BudgetField: FC<BudgetFieldProps> = ({ value, onChange }) => (
   <div>
     <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-neutral-400">
-      Project budget
+      What can I help you with?
     </p>
+
     <div className="flex flex-wrap gap-2">
       {BUDGET_OPTIONS.map((option) => {
         const active = value === option.value;
+
         return (
           <button
             key={option.value}
@@ -33,6 +39,7 @@ export const BudgetField: FC<BudgetFieldProps> = ({ value, onChange }) => (
                 className="absolute inset-0 rounded-full bg-gradient-to-r from-coral/20 to-lavender/20"
               />
             )}
+
             <span className="relative">{option.label}</span>
           </button>
         );

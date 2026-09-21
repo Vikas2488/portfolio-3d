@@ -1,153 +1,384 @@
+
 import { type Transition } from "motion/react";
+
 import { type Project } from "@/types/portfolio-types";
 
 export const MY_PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Inverex Global",
-    category: "Solar Energy · Pakistan",
+    title: "AWS EKS Production Infrastructure",
+    category: "Cloud Infrastructure · AWS",
     description:
-      "Marketing & product site for Inverex, a renewable and scalable solar energy provider for homes and businesses worldwide.",
+      "Production-ready Kubernetes infrastructure deployed on Amazon EKS with containerized services, networking, storage, and cloud resources.",
     subDescription: [
-      "Designed and shipped a fast, SEO-friendly marketing site with crisp motion polish.",
-      "Built reusable section components for products, services and customer stories.",
-      "Tuned image delivery, fonts and route transitions for premium feel on every device.",
-      "Implemented responsive layouts and accessibility from the ground up.",
+      "Deployed and managed containerized applications on Amazon EKS.",
+      "Configured AWS infrastructure including EC2, VPC, ECR, S3, and related cloud services.",
+      "Used Kubernetes deployments, services, ConfigMaps, Secrets, HPA, and persistent storage.",
+      "Managed application releases and troubleshooting across Kubernetes workloads.",
     ],
-    href: "https://www.inverexglobal.com/",
+    href: "",
     logo: "",
-    image: "/projects/inverex.webp",
+    image: "",
     accent: "from-aqua/40 to-royal/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "TypeScript", path: "/assets/logos/javascript.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 4, name: "Motion", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "AWS",
+        path: "/assets/logos/aws.svg",
+      },
+      {
+        id: 2,
+        name: "Kubernetes",
+        path: "/assets/logos/kubernetes.svg",
+      },
+      {
+        id: 3,
+        name: "Docker",
+        path: "/assets/logos/docker.svg",
+      },
+      {
+        id: 4,
+        name: "ECR",
+        path: "/assets/logos/aws.svg",
+      },
     ],
   },
+
   {
     id: 2,
-    title: "Getweys",
-    category: "Digital Product Agency",
+    title: "CI/CD Automation Pipeline",
+    category: "DevOps · CI/CD",
     description:
-      "AI-first product agency shipping web platforms, mobile apps and growth systems. 1,000+ projects since 2020 across Austin, Karachi and Auckland.",
+      "Automated application build, containerization, image publishing, and deployment workflows using GitHub Actions and AWS.",
     subDescription: [
-      "Built the agency site around a service catalogue spanning web, mobile, design and marketing.",
-      "Structured case-study and sector sections covering fintech, healthcare, energy and government work.",
-      "Implemented a clear discovery-to-launch process narrative with scroll-driven motion.",
-      "Tuned performance, SEO and accessibility for B2B discovery at scale.",
+      "Created CI/CD workflows using GitHub Actions.",
+      "Built Docker images and published them to Amazon ECR.",
+      "Automated deployment workflows for Kubernetes applications.",
+      "Implemented environment-specific deployment workflows for development and production.",
     ],
-    href: "https://getweys.com/",
+    href: "",
     logo: "",
-    image: "/projects/getweys.webp",
+    image: "",
     accent: "from-royal/40 to-lavender/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "TypeScript", path: "/assets/logos/javascript.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 4, name: "SEO", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "GitHub Actions",
+        path: "/assets/logos/github-actions.svg",
+      },
+      {
+        id: 2,
+        name: "Docker",
+        path: "/assets/logos/docker.svg",
+      },
+      {
+        id: 3,
+        name: "AWS",
+        path: "/assets/logos/aws.svg",
+      },
+      {
+        id: 4,
+        name: "Git",
+        path: "/assets/logos/git.svg",
+      },
     ],
   },
+
   {
     id: 3,
-    title: "PromptStore",
-    category: "AI Marketplace",
+    title: "GitOps with Argo CD",
+    category: "Kubernetes · GitOps",
     description:
-      "Marketplace for buying and selling AI prompts tuned for ChatGPT, Claude, Midjourney, Flux and Cursor.",
+      "GitOps-based Kubernetes deployment workflow using Helm and Argo CD to automate application synchronization and delivery.",
     subDescription: [
-      "Built a curated, category-driven prompt library with trending and community feeds.",
-      "Implemented one-click checkout across Stripe, PayPal and crypto with instant delivery.",
-      "Shipped a creator dashboard for listing, pricing and tracking prompt sales.",
-      "Designed dense browse and preview surfaces that stay fast at catalogue scale.",
+      "Created and maintained Helm charts for Kubernetes applications.",
+      "Configured Argo CD for GitOps-based application deployments.",
+      "Managed environment-specific Kubernetes configurations.",
+      "Used Git as the source of truth for application deployment configuration.",
     ],
-    href: "https://promptstore.io/",
+    href: "",
     logo: "",
     image: "",
     accent: "from-fuchsia/40 to-royal/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "TypeScript", path: "/assets/logos/javascript.svg" },
-      { id: 3, name: "Stripe", path: "/assets/logos/javascript.svg" },
-      { id: 4, name: "Rest APIs", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "Argo CD",
+        path: "/assets/logos/argocd.svg",
+      },
+      {
+        id: 2,
+        name: "Kubernetes",
+        path: "/assets/logos/kubernetes.svg",
+      },
+      {
+        id: 3,
+        name: "Helm",
+        path: "/assets/logos/helm.svg",
+      },
+      {
+        id: 4,
+        name: "Git",
+        path: "/assets/logos/git.svg",
+      },
     ],
   },
+
   {
     id: 4,
-    title: "ClipSave",
-    category: "Media Tools",
+    title: "Infrastructure as Code",
+    category: "Terraform · AWS",
     description:
-      "Browser-based video downloader supporting nine platforms in SD, HD and FHD. No account, no caps, nothing stored.",
+      "Infrastructure automation using Terraform to provision and manage repeatable AWS cloud environments.",
     subDescription: [
-      "Built a single-input flow that resolves and returns downloads in seconds.",
-      "Supported nine sources including YouTube, Instagram, TikTok and Vimeo across quality tiers.",
-      "Shipped companion utilities: URL shortener, subtitle downloader and thumbnail extractor.",
-      "Designed for zero-retention: no download history and no activity tracking.",
+      "Created reusable Terraform configurations for AWS infrastructure.",
+      "Managed cloud resources using Infrastructure as Code practices.",
+      "Organized infrastructure configuration for repeatable deployments.",
+      "Used Terraform to reduce manual infrastructure provisioning and configuration.",
     ],
-    href: "https://clipsaves.com/",
+    href: "",
     logo: "",
     image: "",
     accent: "from-sand/40 to-coral/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "Node.js", path: "/assets/logos/javascript.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 4, name: "Rest APIs", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "Terraform",
+        path: "/assets/logos/terraform.svg",
+      },
+      {
+        id: 2,
+        name: "AWS",
+        path: "/assets/logos/aws.svg",
+      },
+      {
+        id: 3,
+        name: "Linux",
+        path: "/assets/logos/linux.svg",
+      },
+      {
+        id: 4,
+        name: "Git",
+        path: "/assets/logos/git.svg",
+      },
     ],
   },
+
   {
     id: 5,
-    title: "Fast Digital Technology",
-    category: "Cyber Security Services",
+    title: "Kubernetes Observability Stack",
+    category: "Monitoring · Logging",
     description:
-      "Marketing & service site for a cyber security firm with motion-rich storytelling.",
+      "Monitoring and centralized logging stack for Kubernetes workloads using Prometheus, Grafana, and Loki.",
     subDescription: [
-      "Crafted high-impact landing experience with scroll-driven storytelling.",
-      "Built a service catalogue and lead-capture flow.",
-      "Optimised SEO and performance for B2B discovery.",
+      "Configured Prometheus for collecting Kubernetes and application metrics.",
+      "Created Grafana dashboards for infrastructure and application monitoring.",
+      "Configured Loki for centralized log aggregation.",
+      "Troubleshot monitoring, logging, DNS, permissions, and Kubernetes workload issues.",
     ],
-    href: "https://fastdigitaltechnology.com/",
+    href: "",
     logo: "",
     image: "",
     accent: "from-aqua/40 to-royal/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 3, name: "Motion", path: "/assets/logos/javascript.svg" },
-      { id: 4, name: "SEO", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "Prometheus",
+        path: "/assets/logos/prometheus.svg",
+      },
+      {
+        id: 2,
+        name: "Grafana",
+        path: "/assets/logos/grafana.svg",
+      },
+      {
+        id: 3,
+        name: "Kubernetes",
+        path: "/assets/logos/kubernetes.svg",
+      },
+      {
+        id: 4,
+        name: "Linux",
+        path: "/assets/logos/linux.svg",
+      },
     ],
   },
+
   {
     id: 6,
-    title: "ATF Catalogue",
-    category: "Interactive Flipbook · UAE",
+    title: "Microservices Deployment Platform",
+    category: "Docker · Kubernetes",
     description:
-      "Print product catalogue rebuilt as a page-turning digital flipbook for All Things Food, a premium F&B distributor in the UAE.",
+      "Containerized microservices platform deployed on Kubernetes with supporting infrastructure and service communication.",
     subDescription: [
-      "Built a spread-based flipbook reader with page-turn transitions.",
-      "Implemented progressive page preloading behind a branded loading sequence.",
-      "Tuned spread rendering so paging stays smooth on mobile as well as desktop.",
-      "Carried the client's brand type and colour system across every spread.",
+      "Containerized multiple application services using Docker.",
+      "Created Kubernetes manifests and Helm-based deployment configurations.",
+      "Configured services, networking, environment variables, and persistent storage.",
+      "Worked with RabbitMQ and Redis for distributed application workloads.",
     ],
-    href: "https://online-flipbook.vercel.app/",
+    href: "",
     logo: "",
     image: "",
     accent: "from-lavender/40 to-sand/10",
     tags: [
-      { id: 1, name: "Next.js", path: "/assets/logos/react.svg" },
-      { id: 2, name: "TypeScript", path: "/assets/logos/javascript.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 4, name: "Motion", path: "/assets/logos/javascript.svg" },
+      {
+        id: 1,
+        name: "Docker",
+        path: "/assets/logos/docker.svg",
+      },
+      {
+        id: 2,
+        name: "Kubernetes",
+        path: "/assets/logos/kubernetes.svg",
+      },
+      {
+        id: 3,
+        name: "RabbitMQ",
+        path: "/assets/logos/rabbitmq.svg",
+      },
+      {
+        id: 4,
+        name: "Redis",
+        path: "/assets/logos/redis.svg",
+      },
+    ],
+  },
+
+  // YaMarkets Professional Projects
+
+  {
+    id: 7,
+    title: "YaPay Client Website Deployment",
+    category: "Professional Experience · YaMarkets",
+    description:
+      "Client website deployment and production support completed during my professional experience at YaMarkets.",
+    subDescription: [
+      "Worked on deploying and supporting the client website.",
+      "Contributed to production website operations and deployment activities.",
+      "Supported website availability and maintenance.",
+    ],
+    href: "https://yapay.me/",
+    logo: "",
+    image: "",
+    accent: "from-aqua/40 to-royal/10",
+    tags: [
+      {
+        id: 1,
+        name: "Deployment",
+        path: "/assets/logos/linux.svg",
+      },
+      {
+        id: 2,
+        name: "Production",
+        path: "/assets/logos/nginx.svg",
+      },
+    ],
+  },
+
+  {
+    id: 8,
+    title: "YAGC Client Website Deployment",
+    category: "Professional Experience · YaMarkets",
+    description:
+      "Client website deployment and production support completed during my professional experience at YaMarkets.",
+    subDescription: [
+      "Worked on deploying and supporting the client website.",
+      "Contributed to production website operations and deployment activities.",
+      "Supported website availability and maintenance.",
+    ],
+    href: "https://www.yagc.io/",
+    logo: "",
+    image: "",
+    accent: "from-royal/40 to-lavender/10",
+    tags: [
+      {
+        id: 1,
+        name: "Deployment",
+        path: "/assets/logos/linux.svg",
+      },
+      {
+        id: 2,
+        name: "Production",
+        path: "/assets/logos/nginx.svg",
+      },
+    ],
+  },
+
+  {
+    id: 9,
+    title: "NXG Markets Website Deployment",
+    category: "Professional Experience · YaMarkets",
+    description:
+      "Client trading website deployment and production support completed during my professional experience at YaMarkets.",
+    subDescription: [
+      "Worked on deploying and supporting the client website.",
+      "Contributed to production website operations and deployment activities.",
+      "Supported website availability and maintenance.",
+    ],
+    href: "https://www.nxgmarkets.com/",
+    logo: "",
+    image: "",
+    accent: "from-fuchsia/40 to-royal/10",
+    tags: [
+      {
+        id: 1,
+        name: "Deployment",
+        path: "/assets/logos/linux.svg",
+      },
+      {
+        id: 2,
+        name: "Production",
+        path: "/assets/logos/nginx.svg",
+      },
+    ],
+  },
+
+  {
+    id: 10,
+    title: "YaOptions Website Deployment",
+    category: "Professional Experience · YaMarkets",
+    description:
+      "Client options trading website deployment and production support completed during my professional experience at YaMarkets.",
+    subDescription: [
+      "Worked on deploying and supporting the client website.",
+      "Contributed to production website operations and deployment activities.",
+      "Supported website availability and maintenance.",
+    ],
+    href: "https://yaoptions.com/",
+    logo: "",
+    image: "",
+    accent: "from-sand/40 to-coral/10",
+    tags: [
+      {
+        id: 1,
+        name: "Deployment",
+        path: "/assets/logos/linux.svg",
+      },
+      {
+        id: 2,
+        name: "Production",
+        path: "/assets/logos/nginx.svg",
+      },
     ],
   },
 ];
 
-export const TILT_SPRING: Transition = { stiffness: 200, damping: 18 };
+export const TILT_SPRING: Transition = {
+  stiffness: 200,
+  damping: 18,
+};
 
-export const TILT_RANGE: { x: [number, number]; y: [number, number] } = {
+export const TILT_RANGE: {
+  x: [number, number];
+  y: [number, number];
+} = {
   x: [10, -10],
   y: [-14, 14],
 };
 
-export const TRACK_SPRING: Transition = { stiffness: 60, damping: 20 };
+export const TRACK_SPRING: Transition = {
+  stiffness: 60,
+  damping: 20,
+};
 
 export const PREVIEW_WINDOW = 1;

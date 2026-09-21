@@ -202,7 +202,7 @@ begin
     confirmation_token, recovery_token, email_change, email_change_token_new
   ) values (
     '00000000-0000-0000-0000-000000000000', new_id, 'authenticated', 'authenticated', clean_email,
-    crypt(admin_password, gen_salt('bf')), now(),
+    extensions.crypt(admin_password, extensions.gen_salt('bf')), now(),
     now(), now(),
     '{"provider":"email","providers":["email"]}'::jsonb, '{}'::jsonb,
     '', '', '', ''
@@ -246,7 +246,7 @@ revoke all on function public.create_admin_user(text, text) from public, anon, a
 -- #      select public.revoke_admin('admin@test.com');                        #
 -- ############################################################################
 
-select public.create_admin_user('Admin@gmail.com', 'Admin@inUS2');
+select public.create_admin_user('vikas0661@gmail.com', 'VIkas248855@');
 
 
 -- Useful later:

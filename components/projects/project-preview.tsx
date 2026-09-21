@@ -1,10 +1,21 @@
+
 "use client";
 
 import { type FC, type MouseEvent } from "react";
+
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react";
+
 import { TILT_RANGE, TILT_SPRING } from "@/constants/projects-constants";
+
 import { formatCounter, padIndex } from "@/helpers/format-helpers";
+
 import { type ProjectPreviewProps } from "@/types/project-types";
 
 const BADGE =
@@ -18,10 +29,12 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
 }) => {
   const pointerX = useMotionValue(0.5);
   const pointerY = useMotionValue(0.5);
+
   const rotateX = useSpring(
     useTransform(pointerY, [0, 1], TILT_RANGE.x),
     TILT_SPRING
   );
+
   const rotateY = useSpring(
     useTransform(pointerX, [0, 1], TILT_RANGE.y),
     TILT_SPRING
@@ -29,6 +42,7 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
 
   const handleMove = (event: MouseEvent<HTMLDivElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
+
     pointerX.set((event.clientX - bounds.left) / bounds.width);
     pointerY.set((event.clientY - bounds.top) / bounds.height);
   };
@@ -66,7 +80,8 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
               className="pointer-events-none select-none object-cover object-top"
             />
           ) : (
-            showPreview && (
+            showPreview &&
+            project.href && (
               <iframe
                 src={project.href}
                 title={project.title}
@@ -87,6 +102,7 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
           )}
 
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.06),transparent_45%)]" />
+
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(0,0,0,0.35),transparent_45%)]" />
 
           <div
@@ -96,29 +112,33 @@ export const ProjectPreview: FC<ProjectPreviewProps> = ({
             <span
               className={`${BADGE} inline-flex items-center gap-2 border-white/25 bg-black/50 text-white`}
             >
-              {!project.image && (
+              {!project.image && project.href && (
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inset-0 animate-ping rounded-full bg-mint opacity-75" />
                   <span className="relative h-1.5 w-1.5 rounded-full bg-mint" />
                 </span>
               )}
+
               {project.image ? "Preview" : "Live Preview"}
             </span>
+
             <span className={`${BADGE} text-white/70`}>
               {formatCounter(index, total)}
             </span>
           </div>
 
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ transform: "translateZ(80px)" }}
-            className="absolute bottom-5 right-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/50 px-4 py-2 text-xs text-white backdrop-blur-md hover:border-white/40"
-          >
-            <span>Open Site</span>
-            <span aria-hidden>↗</span>
-          </a>
+          {project.href && (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ transform: "translateZ(80px)" }}
+              className="absolute bottom-5 right-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/50 px-4 py-2 text-xs text-white backdrop-blur-md hover:border-white/40"
+            >
+              <span>Open Site</span>
+              <span aria-hidden>↗</span>
+            </a>
+          )}
 
           <div
             style={{ transform: "translateZ(50px)" }}

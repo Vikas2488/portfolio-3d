@@ -2,35 +2,31 @@ import { type Experience } from "@/types/portfolio-types";
 
 export const EXPERIENCES: Experience[] = [
   {
-    title: "Senior Software Engineer",
-    job: "Getweys · Karachi",
-    date: "2023 - Present",
+    title: "DevOps Engineer",
+    job: "YaMarkets",
+    date: "2025 - Present",
     contents: [
-      "Designing and delivering scalable web applications using React, Next.js and Node.js.",
-      "Leading cross-functional collaboration and shipping projects ahead of deadlines.",
-      "Contributing to architecture decisions that keep codebases scalable and maintainable.",
-      "Mentoring and upskilling team members, lifting overall productivity and code quality.",
+      "Managing production infrastructure and deployment workflows for applications and services.",
+      "Working with Docker and Kubernetes to containerize, deploy, scale, and manage applications.",
+      "Building and maintaining CI/CD pipelines using GitHub Actions and Jenkins for automated application delivery.",
+      "Managing AWS cloud infrastructure including EC2, ECR, S3, VPC, RDS, and related services.",
+      "Using Helm and Argo CD to manage Kubernetes deployments and GitOps-based application delivery.",
+      "Implementing infrastructure automation using Terraform and Ansible.",
+      "Monitoring production systems using Prometheus, Grafana, Loki, and related observability tools.",
+      "Managing NGINX, RabbitMQ, Redis, and MySQL components in production environments.",
+      "Troubleshooting deployment, networking, container, storage, and infrastructure issues in Linux environments.",
     ],
   },
+
   {
-    title: "Junior Team Lead",
-    job: "Digital Graphiks · Karachi",
-    date: "Feb 2023 - Jun 2023",
+    title: "DevOps Engineer",
+    job: "Production & Cloud Infrastructure",
+    date: "2023 - 2025",
     contents: [
-      "Led a team of developers to deliver complex projects on time with React, Next.js and Node.js.",
-      "Streamlined workflows and code review standards across teams.",
-      "Debugged and resolved production issues quickly to keep products running smoothly.",
-      "Mentored junior developers and grew the team's overall skillset.",
-    ],
-  },
-  {
-    title: "Front-End Developer",
-    job: "Lucid Web Solution · Karachi",
-    date: "Sep 2022 - Feb 2023",
-    contents: [
-      "Built responsive, accessible UIs that improved user satisfaction.",
-      "Developed dynamic web apps using React, Next.js, JavaScript, HTML and CSS.",
-      "Integrated REST APIs and dynamic data visualisation to enhance interactivity.",
+      "Supported cloud infrastructure, application deployments, and production environments.",
+      "Automated application build and deployment workflows using CI/CD pipelines.",
+      "Worked with Docker, Kubernetes, Git, Linux, AWS, and infrastructure automation tools.",
+      "Configured monitoring and logging solutions to improve application and infrastructure visibility.",
     ],
   },
 ];
