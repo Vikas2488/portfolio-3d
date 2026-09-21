@@ -1,26 +1,57 @@
+
 export const SKILL_CHIPS = [
-  "AWS",
-  "Kubernetes",
-  "Docker",
-  "Terraform",
-  "Helm",
+  // DevOps & CI/CD
   "Jenkins",
   "GitHub Actions",
   "Argo CD",
+  "Terraform",
   "Ansible",
-  "Linux",
-  "NGINX",
-  "Git",
-  "GitHub",
+  "Bash",
+
+  // Cloud & Infrastructure
+  "AWS",
+  "Azure",
+  "AWS EKS",
+  "AWS EC2",
+  "Amazon ECR",
+  "AWS S3",
+  "AWS VPC",
+  "AWS EBS",
+  "Route 53",
+  "ElastiCache",
+  "Azure DevOps",
+  "Azure Container Registry",
+
+  // Containerization & Orchestration
+  "Kubernetes",
+  "Docker",
+  "Helm",
+  "Istio",
+
+  // Monitoring & Logging
   "Prometheus",
   "Grafana",
   "Loki",
+  "Grafana Stack",
+  "Portainer",
+  "Dozzle",
+
+  // Networking & Security
+  "NGINX",
   "RabbitMQ",
-  "Redis",
+  "Apache Server",
+
+  // Databases & Development
   "MySQL",
-  "Istio",
-  "Amazon ECR",
-  "AWS EC2",
-  "AWS S3",
-  "AWS VPC",
+  "MongoDB",
+  "Next.js",
+  "Node.js",
+  "SonarQube",
+
+  // Operating Systems & Tools
+  "Linux",
+  "Windows",
+  "CentOS",
+  "Git",
+  "GitHub",
 ];

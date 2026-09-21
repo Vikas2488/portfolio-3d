@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Suspense, useRef, type FC } from "react";
@@ -15,34 +16,63 @@ const Rig: FC = () => {
       state.camera.position,
       [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
       0.5,
-      delta
+      delta,
     );
   });
+
   return null;
 };
 
 export const HeroScene: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
+
   const frame = useRef<HTMLElement>(null);
   const active = useSceneActive({ whenVisible: frame });
 
   return (
     <figure
       ref={frame}
-      className="absolute inset-0"
-      style={{ width: "100vw", height: "100vh" }}
+      className="pointer-events-none absolute inset-0 z-[5]"
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+      aria-hidden="true"
     >
       <Canvas
-        camera={{ position: [0, 1, 3] }}
+        camera={{
+          position: [0, 1, 3],
+          fov: 50,
+          near: 0.1,
+          far: 100,
+        }}
         frameloop={active ? "always" : "never"}
+        dpr={[1, 1.5]}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: "default",
+        }}
       >
         <Suspense fallback={<Loader />}>
-          <Float>
+          <ambientLight intensity={1.5} />
+
+          <directionalLight
+            position={[5, 5, 5]}
+            intensity={2}
+          />
+
+          <Float
+            speed={1.5}
+            rotationIntensity={0.3}
+            floatIntensity={0.5}
+          >
             <Astronaut
-              scale={isMobile ? 0.23 : undefined}
-              position={isMobile ? [0, -1.5, 0] : undefined}
+              scale={isMobile ? 0.23 : 0.3}
+              position={isMobile ? [0, -1.5, 0] : [1.3, -1, 0]}
             />
           </Float>
+
           <Rig />
         </Suspense>
       </Canvas>
