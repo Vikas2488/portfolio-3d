@@ -1,6 +1,6 @@
 import { type Stat } from "@/types/portfolio-types";
 
-export const HERO_NAME = "Vikas";
+export const HERO_NAME = "Vikas Kumar";
 
 export const HERO_ROLE = "DevOps Engineer";
 

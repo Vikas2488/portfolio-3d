@@ -1,40 +1,41 @@
+
 import { type Review } from "@/types/portfolio-types";
 
 export const REVIEWS: Review[] = [
   {
-    name: "Daniel Cole",
-    role: "CTO · Arootah",
-    body: "He doesn't just close tickets; he improves the architecture as he goes. Our investment dashboards are faster and far easier to maintain since he joined.",
+    name: "Cloud Infrastructure",
+    role: "AWS • EKS • Terraform",
+    body: "Designed and managed cloud infrastructure using AWS, Terraform, and Kubernetes to support scalable and reliable deployments.",
     accent: "from-royal to-lavender",
   },
   {
-    name: "Sara Whitman",
-    role: "Product Lead · Getweys",
-    body: "One of the most reliable engineers I've worked with. Sharp judgement, great communication, and the UI quality is consistently a level above what we asked for.",
+    name: "CI/CD Automation",
+    role: "GitHub Actions • Jenkins",
+    body: "Built automated CI/CD workflows for Docker image builds, Amazon ECR publishing, and application deployments.",
     accent: "from-mint to-aqua",
   },
   {
-    name: "Omar Siddiqui",
-    role: "Engineering Manager",
-    body: "Strong engineering instincts and a natural mentor. He lifted the whole team's standards on code review and shipped features that actually moved our metrics.",
+    name: "Containerization",
+    role: "Docker • Kubernetes • Helm",
+    body: "Containerized applications and used Helm charts and Kubernetes to simplify application deployment and environment management.",
     accent: "from-lavender to-coral",
   },
   {
-    name: "Priya Nair",
-    role: "Tech Lead",
-    body: "We migrated a legacy stack to Next.js + Node with Hasnain leading the effort. Fewer bugs, faster pages, and a much happier engineering team.",
+    name: "Monitoring & Observability",
+    role: "Prometheus • Grafana • Loki",
+    body: "Worked with monitoring and logging tools to improve application visibility, troubleshoot issues, and support reliable operations.",
     accent: "from-fuchsia to-royal",
   },
   {
-    name: "Aisha Raza",
-    role: "Product Manager",
-    body: "Communicative, dependable and thoughtful about edge cases before they become problems. Planning a release around him is genuinely low-stress.",
+    name: "Infrastructure as Code",
+    role: "Terraform • Ansible",
+    body: "Used infrastructure-as-code and automation practices to make infrastructure provisioning and configuration more consistent.",
     accent: "from-sand to-coral",
   },
   {
-    name: "Liam Foster",
-    role: "Founder",
-    body: "Calm under pressure and very deliberate about scale. He shipped our launch ahead of schedule and I'd hire him again in a heartbeat.",
+    name: "Production Operations",
+    role: "MT4 • MT5 • MySQL",
+    body: "Managed trading server environments and supported high availability, operational stability, and database-related infrastructure tasks.",
     accent: "from-aqua to-mint",
   },
 ];

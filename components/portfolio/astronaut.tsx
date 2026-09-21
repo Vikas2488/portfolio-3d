@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef, type FC } from "react";
@@ -15,9 +16,11 @@ import {
 
 export const Astronaut: FC<AstronautProps> = (props) => {
   const group = useRef<Group>(null);
+
   const { nodes, materials, animations } = useGLTF(
-    "/models/astronaut.glb"
+    "/models/astronaut.glb",
   );
+
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -26,10 +29,11 @@ export const Astronaut: FC<AstronautProps> = (props) => {
     }
   }, [actions, animations]);
 
-  // A shorter drop settles the largest moving object above the fold sooner,
-  // which is what Speed Index measures.
   const yPosition = useMotionValue(2);
-  const ySpring = useSpring(yPosition, { damping: 30 });
+
+  const ySpring = useSpring(yPosition, {
+    damping: 30,
+  });
 
   useEffect(() => {
     ySpring.set(-1);
@@ -43,8 +47,12 @@ export const Astronaut: FC<AstronautProps> = (props) => {
 
   const nodesMap = nodes as unknown as Record<
     string,
-    { geometry: BufferGeometry; skeleton: Skeleton } & Object3D
+    {
+      geometry: BufferGeometry;
+      skeleton: Skeleton;
+    } & Object3D
   >;
+
   const textureMaterial = materials[
     "AstronautFallingTexture.png"
   ] as Material;
@@ -62,7 +70,10 @@ export const Astronaut: FC<AstronautProps> = (props) => {
         <group name="Sketchfab_model">
           <group name="Root">
             <group name="metarig">
-              <primitive object={nodesMap.metarig_rootJoint as Object3D} />
+              <primitive
+                object={nodesMap.metarig_rootJoint as Object3D}
+              />
+
               {(
                 [
                   "Cube001_0",

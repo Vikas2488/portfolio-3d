@@ -103,7 +103,7 @@ export const ContactForm: FC = () => {
 
           <FloatingField
             id="message"
-            label="What are you building?"
+            label="How can I help you with your DevOps and cloud infrastructure needs?"
             value={formData.message}
             onChange={(value) => update("message", value)}
             required
